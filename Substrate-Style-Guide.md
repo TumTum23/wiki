@@ -127,3 +127,11 @@ let mut target_path =
 		qed"
 	);
 ```
+
+- Unsafe code requires explicit proofs as panickers do. When introducing the unsafe code, one should
+consider tradeoffs between efficiency on one hand and reliability, maintenance costs, and security on the other. 
+Here is a list of questions that may help to evaluate the tradeoffs:
+    - how much more performant or compact the resulting code will get using unsafe code, 
+    - how likely that invariants could be violated, 
+    - how likely that the issue can be discovered before production (tests and tools can help but not always) and,
+    - what are the consequences if the problems slip into production,
